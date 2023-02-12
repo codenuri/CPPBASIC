@@ -1,0 +1,4 @@
+namespace Video
+{
+	void init();
+}
