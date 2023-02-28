@@ -1,25 +1,32 @@
-#include <print>
+#include <iostream>
+using namespace std;
+
 class Base
 {
-	int bm{0};
+    int data1;
 public:
-	virtual void f1() {}
-	virtual void f2() {}
-	virtual void f3() {}
+    void f1()         {}
+    virtual void f2() {}
+    virtual void f3() {}
+    virtual void f4() {}    
 };
+
 class Derived : public Base
 {
-	int dm{0};
+    int data2;
 public:
-	void f2() override {}
+    void f1()         {}
+    virtual void f2() {}    
 };
+
 int main()
 {
-	Base b1, b2;
-	Derived d1;
-
-	std::println("{}, {}", sizeof(b1), sizeof(d1));
-
-	Base* p = &d1;
-	p->f2();  // p->ptrtable[2]() 
+    std::cout << sizeof(Base) << std::endl;
+    std::cout << sizeof(Derived) << std::endl;
 }
+
+
+
+
+
+

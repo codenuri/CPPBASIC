@@ -1,24 +1,12 @@
-class Animal
-{
-public:
-	virtual ~Animal() {}
-};
-class Snake : public Animal {};
+#include <iostream>
+#include <typeinfo>
 
-class Dog : public Animal 
-{5
-public:
-	void run() {}
-};
-void fn(Animal* pa)
-{
-	pa->run(); // error
-	
-	Dog* pd = static_cast<Dog*>(pa);
-	pd->run();
-}
 int main()
 {
-	Dog d;
-	fn(&d);
+    int  n1 = 10;
+    auto n2 = n1; // n2의 타입은 ? int 
+    
+    const std::type_info& t1 = typeid(n2);
+    
+    std::cout << t1.name() << std::endl;
 }
